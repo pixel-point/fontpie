@@ -10,7 +10,8 @@
   ],
   "scripts": {
     "lint": "npx eslint *.js",
-    "lint:fix": "npm run lint -- --fix"
+    "lint:fix": "npm run lint -- --fix",
+    "start": "node index.js"
   },
   "dependencies": {
     "commander": "^9.4.1",
