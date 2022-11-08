@@ -1,7 +1,7 @@
 {
-  "name": "@pixelpoint/fontpie",
+  "name": "fontpie",
   "description": "CLI tool for creating fallback @font-face",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "main": "index.js",
   "files": [
     "index.js",
