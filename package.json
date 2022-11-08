@@ -1,7 +1,14 @@
 {
-  "private": true,
+  "name": "@pixelpoint/fontpie",
+  "description": "CLI tool for creating fallback @font-face",
+  "version": "1.0.0",
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "LICENSE",
+    "README.md"
+  ],
   "scripts": {
-    "start": "node index.js",
     "lint": "npx eslint *.js",
     "lint:fix": "npm run lint -- --fix"
   },
