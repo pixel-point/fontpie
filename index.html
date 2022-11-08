@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Font</title>
+    <style>
+      @font-face {
+        font-family: 'Roboto-Regular';
+        font-display: swap;
+        src: url('Roboto-Regular.ttf') format('truetype');
+      }
+
+      @font-face {
+        font-family: 'Roboto-Regular Fallback';
+        src: local('Times New Roman');
+        ascent-override: 84.57%;
+        descent-override: 22.25%;
+        line-gap-override: 0.00%;
+        size-adjust: 109.71%;
+      }
+
+      body {
+        margin: 2em 8em;
+      }
+
+      .container {
+        position: relative;
+      }
+
+      .fallback,
+      .original {
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-size: 24px;
+        line-height: 1.6;
+        outline: 1px solid currentColor;
+        max-width: 30em;
+      }
+
+      .fallback {
+        font-family: 'Roboto-Regular Fallback';
+        color: blue;
+      }
+
+      .original {
+        font-family: 'Roboto-Regular';
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="fallback">
+        <h3>PixelPoint</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          <b>Provident culpa aspernatur saepe corrupti quam voluptates</b> magni
+          non minus ad hic quas corporis cum, amet,
+          <i>odit quae earum iure mollitia quis</i>.
+        </p>
+      </div>
+      <div class="original">
+        <h3>PixelPoint</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          <b>Provident culpa aspernatur saepe corrupti quam voluptates</b> magni
+          non minus ad hic quas corporis cum, amet,
+          <i>odit quae earum iure mollitia quis</i>.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
