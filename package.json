@@ -22,5 +22,9 @@
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-n": "^15.5.0",
     "eslint-plugin-promise": "^6.1.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com:pixel-point/fontpie.git"
   }
 }
