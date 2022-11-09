@@ -75,6 +75,10 @@ Options:
   -h, --help                    display help for command
 ```
 
+**Serif:** Times New Roman
+
+**Sans-Serif:** Arial
+
 ### Compatibility
 Properties used for font metric adjusments [ascent-override](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/ascent-override), [descent-override](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/descent-override), [line-gap-override](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/line-gap-override), [size-adjust](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/size-adjust) are not supported by some browsers:
 | Browser | Support  |
