@@ -75,6 +75,19 @@ Options:
   -h, --help                         display help for command
 ```
 
+### Compatibility
+Properties used for font metric adjusments [ascent-override](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/ascent-override), [descent-override](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/descent-override), [line-gap-override](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/line-gap-override), [size-adjust](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/size-adjust) are not supported by some browsers:
+| Browser | Support  |
+|---|---|
+| Chrome  |   ✅ 87 |
+| Edge  |  ✅ 87  |
+| Firefox |  ✅ 89  |
+| Opera |  ✅ 73  |
+| Safari | ❌ |
+
+You can keep track on the browser's support of these properties [here](https://caniuse.com/?search=ascent-override).
+
+
 ## ❤️ Credits
 
 Big thanks to
