@@ -1,16 +1,16 @@
-# Fontpie - CLI that automaticlly adjusts the fallback font metrics
+# Fontpie - get your layout shifts optimized with a CLI-generated piece of CSS.
 
 ## Features
 
 - 🏃‍♂️ Runs from command line
-- 💪 Generates font metrics to match the fallback font with any custom font
-- 🚀 Framework, language, and bundler agnostic solution
+- 💪 Generates fallback font metrics to match any custom web font
+- 🚀 Framework, language, and bundler-agnostic solution
 
 ![Example](https://user-images.githubusercontent.com/2697570/200630610-d226dee1-df27-49e9-9d1f-bff0f5beb3e5.gif)
 
 ## The problem
 
-Using custom fonts in the web results in the layout shift during initial page loading. It happens because your custom font metrics differ from the the fallback font metrics available in the operating system, and it is the fallback font that is used by the browser to calculate block sizes while the custom font is loading. Same text with the same font size and line height takes different amount of space.
+Custom web font usage is one of the most common causes of cumulative layout shifts on a page. It happens because your custom font metrics differ from the fallback font metrics available in the operating system, and it is the fallback font that is used by the browser to calculate block sizes while the custom font is loading. Thus, the same text with the same `font-size` and `line-height` properties may occupy different amounts of space.
 
 ## The solution
 
