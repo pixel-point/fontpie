@@ -1,10 +1,4 @@
 #! /usr/bin/env node
-
-// ToDo
-// - convert to npm package
-// - convert to TS
-// - write unit tests
-// - write screenshot tests
 const path = require('path')
 const fontkit = require('fontkit')
 const { program } = require('commander')
@@ -74,9 +68,9 @@ function calculateFallbackFontValues (font, category = 'serif') {
 }
 
 program
-  // ToDo: add descriptions
+  .name('fontpie')
+  .description('Get your layout shifts optimized with a CLI-generated piece of CSS')
   .argument('<file>', '*.ttf, *.otf, *.woff or *.woff2 font file')
-  // ToDo: validate options
   .option(
     '-f, --fallback <font-family>',
     'fallback font family type: "serif" or "sans-serif"',
@@ -89,8 +83,14 @@ program
     'font name what will be used as font-family value, by default font filename'
   )
   .action((file, option) => {
-    // ToDo: try...catch
-    const font = fontkit.openSync(file)
+    let font
+
+    try {
+      font = fontkit.openSync(file)
+    } catch (err) {
+      console.error(err.message)
+      return
+    }
 
     const {
       ascentOverride,
