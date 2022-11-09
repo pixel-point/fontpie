@@ -76,7 +76,7 @@ program
   .option(
     '-f, --fallback <font-family>',
     'fallback font family type: "serif" or "sans-serif"',
-    'serif'
+    'sans-serif'
   )
   .option('-s, --style <style>', 'font-style value', 'normal')
   .option('-w, --weight <weight>', 'font-weight value', '400')
