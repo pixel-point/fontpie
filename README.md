@@ -1,4 +1,4 @@
-# Fontpie - get your layout shifts optimized with a CLI-generated piece of CSS.
+# Fontpie - get your layout shifts optimized with a CLI-generated piece of CSS! 
 
 ![npm](https://img.shields.io/npm/v/fontpie) ![npm](https://img.shields.io/npm/dm/fontpie)
 
@@ -10,17 +10,6 @@
 
 🚀 Framework, language, and bundler-agnostic solution
 
-### Layouf shift without metric adjustments
-Layout shift is visible. Titles, descriptions takes more space with a fallback(Arial) until a custom font(Roboto) being loaded.
-![Layouf shift without metric adjustments](https://user-images.githubusercontent.com/2697570/200821005-f9a0f362-d7ce-4469-bc2d-c201e61d6e94.gif)
-
-### Layout shift with metric adjustments
-Layout does not exist. Fallback font(Arial) with adjusted metrics takes the same space as a custom font(Roboto). 
-![Layout shift with metric adjustments](https://user-images.githubusercontent.com/2697570/200821351-db4081c0-433b-48c1-8507-17b15fe4bd92.gif)
-
-
-
-
 ## The problem
 
 Custom web font usage is one of the most common causes of cumulative layout shifts on a page. It happens because your custom font metrics differ from the fallback font metrics available in the operating system, and it is the fallback font that is used by the browser to calculate block sizes while the custom font is loading. Thus, the same text with the same `font-size` and `line-height` properties may occupy different amounts of space.
@@ -29,37 +18,50 @@ Custom web font usage is one of the most common causes of cumulative layout shif
 
 Adjust metrics of the fallback font using [ascent-override](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/ascent-override), [descent-override](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/descent-override), [line-gap-override](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/line-gap-override), [size-adjust](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/size-adjust) properties based on the custom font metrics.
 
+## The outcome
+
+### Layout shift without metric adjustments
+Layout shift is visible. Titles, descriptions takes more space with a fallback(Arial) until a custom font(Roboto) being loaded.
+![Layouf shift without metric adjustments](https://user-images.githubusercontent.com/2697570/200821005-f9a0f362-d7ce-4469-bc2d-c201e61d6e94.gif)
+
+### Layout shift with metric adjustments
+Layout does not exist. Fallback font(Arial) with adjusted metrics takes the same space as a custom font(Roboto). 
+![Layout shift with metric adjustments](https://user-images.githubusercontent.com/2697570/200821351-db4081c0-433b-48c1-8507-17b15fe4bd92.gif)
+
 ## Usage
 
-```
-npx fontpie ./roboto-regular.woff2 --name Roboto
-```
+1. Run the following command, make sure the relative path leads to your custom web font file:
 
-**Output**
-```css
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url('roboto-regular.woff2') format('woff2');
-}
+    ```
+    npx fontpie ./roboto-regular.woff2 --name Roboto
+    ```
 
-@font-face {
-  font-family: 'Roboto Fallback';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Times New Roman');
-  ascent-override: 84.57%;
-  descent-override: 22.25%;
-  line-gap-override: 0.00%;
-  size-adjust: 109.71%;
-}
+2. Copypaste the output alongside your font-face declarations: 
+ 
+    ```css
+    @font-face {
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url('roboto-regular.woff2') format('woff2');
+    }
 
-html {
-  font-family: 'Roboto', 'Roboto Fallback';
-}
-```
+    @font-face {
+      font-family: 'Roboto Fallback';
+      font-style: normal;
+      font-weight: 400;
+      src: local('Times New Roman');
+      ascent-override: 84.57%;
+      descent-override: 22.25%;
+      line-gap-override: 0.00%;
+      size-adjust: 109.71%;
+    }
+
+    html {
+      font-family: 'Roboto', 'Roboto Fallback';
+    }
+    ```
 
 ## Options
 
@@ -82,7 +84,15 @@ Options:
 **Sans-Serif:** Arial
 
 ## Compatibility
-Properties used for font metric adjusments [ascent-override](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/ascent-override), [descent-override](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/descent-override), [line-gap-override](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/line-gap-override), [size-adjust](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/size-adjust) are not supported by some browsers:
+
+The properties used for font metric adjusments:
+- [ascent-override](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/ascent-override)
+- [descent-override](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/descent-override)
+- [line-gap-override](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/line-gap-override)
+- [size-adjust](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/size-adjust) 
+
+are not supported by some browsers:
+
 | Browser | Support  |
 |---|---|
 | Chrome  |   ✅ 87 |
@@ -91,7 +101,7 @@ Properties used for font metric adjusments [ascent-override](https://developer.m
 | Opera |  ✅ 73  |
 | Safari | ❌ |
 
-You can keep track on the browser's support of these properties [here](https://caniuse.com/?search=ascent-override).
+You can keep track on the browser's support for these properties [here](https://caniuse.com/?search=ascent-override).
 
 
 ## ❤️ Credits
