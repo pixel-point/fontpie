@@ -1,7 +1,7 @@
 {
   "name": "fontpie",
   "description": "CLI tool for creating fallback @font-face",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "main": "index.js",
   "files": [
     "index.js",
