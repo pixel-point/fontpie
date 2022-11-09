@@ -8,7 +8,16 @@
 
 🚀 Framework, language, and bundler-agnostic solution
 
-![Example](https://user-images.githubusercontent.com/2697570/200630610-d226dee1-df27-49e9-9d1f-bff0f5beb3e5.gif)
+### Layouf shift without metric adjustments
+Layout shift is visible. Titles, descriptions takes more space with a fallback(Arial) until a custom font(Roboto) being loaded.
+![Layouf shift without metric adjustments](https://user-images.githubusercontent.com/2697570/200821005-f9a0f362-d7ce-4469-bc2d-c201e61d6e94.gif)
+
+### Layout shift with metric adjustments
+Layout does not exist. Fallback font(Arial) with adjusted metrics takes the same space as a custom font(Roboto). 
+![Layout shift with metric adjustments](https://user-images.githubusercontent.com/2697570/200821351-db4081c0-433b-48c1-8507-17b15fe4bd92.gif)
+
+
+
 
 ## The problem
 
