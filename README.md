@@ -2,9 +2,11 @@
 
 ## Features
 
-- 🏃‍♂️ Runs from command line
-- 💪 Generates fallback font metrics to match any custom web font
-- 🚀 Framework, language, and bundler-agnostic solution
+🏃‍♂️ Runs from command line
+
+💪 Generates fallback font metrics to match any custom web font
+
+🚀 Framework, language, and bundler-agnostic solution
 
 ![Example](https://user-images.githubusercontent.com/2697570/200630610-d226dee1-df27-49e9-9d1f-bff0f5beb3e5.gif)
 
