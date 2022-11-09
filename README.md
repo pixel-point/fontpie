@@ -50,18 +50,18 @@ html {
 
 ## Options
 
-```
-Usage: fontpie [options] <file>
+```txt
+Usage: index [options] <file>
 
 Arguments:
-  file                               Font file
+  file                          *.ttf, *.otf, *.woff or *.woff2 font file
 
 Options:
-  -f, --fallback <serif|sans-serif>  fallback font family: serif or sans-serif (default: "serif")
-  -s, --style <normal|italic>        font-style property (default: "normal")
-  -w, --weight <number>              font-weight property (default: "400")
-  -n, --name <string>                font name that will be used as `font-family` property (default -- font filename)
-  -h, --help                         display help for command
+  -f, --fallback <font-family>  fallback font family type: "serif" or "sans-serif" (default: "serif")
+  -s, --style <style>           font-style value (default: "normal")
+  -w, --weight <weight>         font-weight value (default: "400")
+  -n, --name <name>             font name what will be used as font-family value, by default font filename
+  -h, --help                    display help for command
 ```
 
 ## ❤️ Credits
