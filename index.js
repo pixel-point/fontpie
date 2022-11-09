@@ -69,7 +69,9 @@ function calculateFallbackFontValues (font, category = 'serif') {
 
 program
   .name('fontpie')
-  .description('Get your layout shifts optimized with a CLI-generated piece of CSS')
+  .description(
+    'Get your layout shifts optimized with a CLI-generated piece of CSS'
+  )
   .argument('<file>', '*.ttf, *.otf, *.woff or *.woff2 font file')
   .option(
     '-f, --fallback <font-family>',
@@ -80,7 +82,7 @@ program
   .option('-w, --weight <weight>', 'font-weight value', '400')
   .option(
     '-n, --name <name>',
-    'font name what will be used as font-family value, by default font filename'
+    'font name that will be used as `font-family` property (default: font_filename)'
   )
   .action((file, option) => {
     let font
