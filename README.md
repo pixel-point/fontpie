@@ -1,5 +1,7 @@
 # Fontpie - get your layout shifts optimized with a CLI-generated piece of CSS.
 
+![npm](https://img.shields.io/npm/v/fontpie) ![npm](https://img.shields.io/npm/dm/fontpie)
+
 ## Features
 
 🏃‍♂️ Runs from command line
@@ -79,7 +81,7 @@ Options:
 
 **Sans-Serif:** Arial
 
-### Compatibility
+## Compatibility
 Properties used for font metric adjusments [ascent-override](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/ascent-override), [descent-override](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/descent-override), [line-gap-override](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/line-gap-override), [size-adjust](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/size-adjust) are not supported by some browsers:
 | Browser | Support  |
 |---|---|
