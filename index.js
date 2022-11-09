@@ -1,10 +1,4 @@
 #! /usr/bin/env node
-
-// ToDo
-// - convert to npm package
-// - convert to TS
-// - write unit tests
-// - write screenshot tests
 const path = require('path')
 const fontkit = require('fontkit')
 const { program } = require('commander')
@@ -74,23 +68,29 @@ function calculateFallbackFontValues (font, category = 'serif') {
 }
 
 program
-  // ToDo: add descriptions
-  .argument('<file>', 'Font file')
-  // ToDo: validate options
+  .name('fontpie')
+  .description('Get your layout shifts optimized with a CLI-generated piece of CSS')
+  .argument('<file>', '*.ttf, *.otf, *.woff or *.woff2 font file')
   .option(
-    '-f, --fallback <serif|sans-serif>',
-    'fallback font family: serif or sans-serif',
-    'sans-serif'
+    '-f, --fallback <font-family>',
+    'fallback font family type: "serif" or "sans-serif"',
+    'serif'
   )
-  .option('-s, --style <normal|italic>', 'font-style property', 'normal')
-  .option('-w, --weight <number>', 'font-weight property', '400')
+  .option('-s, --style <style>', 'font-style value', 'normal')
+  .option('-w, --weight <weight>', 'font-weight value', '400')
   .option(
-    '-n, --name <string>',
-    'font name what will be used for font-family property. Font filename by default'
+    '-n, --name <name>',
+    'font name what will be used as font-family value, by default font filename'
   )
   .action((file, option) => {
-    // ToDo: try...catch
-    const font = fontkit.openSync(file)
+    let font
+
+    try {
+      font = fontkit.openSync(file)
+    } catch (err) {
+      console.error(err.message)
+      return
+    }
 
     const {
       ascentOverride,
