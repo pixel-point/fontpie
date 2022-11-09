@@ -19,7 +19,7 @@ Adjust metrics of the fallback font using [ascent-override](https://developer.mo
 ## Usage
 
 ```
-npx fontpie ./Roboto.woff2 
+npx fontpie ./roboto-regular.woff2 --name Roboto
 ```
 
 **Output**
@@ -44,7 +44,7 @@ npx fontpie ./Roboto.woff2
 }
 
 html {
-  font-family: 'roboto-regular', 'roboto-regular Fallback';
+  font-family: 'Roboto', 'Roboto Fallback';
 }
 ```
 
