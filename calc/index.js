@@ -10,6 +10,7 @@ const TYPE_TO_FORMAT = {
   eot: 'embedded-opentype'
 }
 
+// ToDo: substr filename from path
 const getFileName = (path) => path
 
 export default function (fontFile, { fallback, style, weight, name }) {
