@@ -1,0 +1,26 @@
+{
+  "private": true,
+  "scripts": {
+    "lint": "npx eslint *.js",
+    "lint:fix": "npm run lint -- --fix",
+    "build": "echo \"ToDo: write build command\""
+  },
+  "files": [
+    "dist/index.js",
+    "README.md"
+  ],
+  "devDependencies": {
+    "eslint": "^8.28.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.5.1",
+    "eslint-plugin-promise": "^6.1.1"
+  },
+  "dependencies": {
+    "fontkit": "^2.0.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com:pixel-point/fontpie.git"
+  }
+}
