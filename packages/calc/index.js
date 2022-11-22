@@ -1,6 +1,5 @@
-import fontkit from 'fontkit'
-
-import { calculateFallbackFontValues } from './util'
+const fontkit = require('fontkit')
+const { calculateFallbackFontValues } = require('./util')
 
 const TYPE_TO_FORMAT = {
   ttf: 'truetype',
@@ -12,7 +11,7 @@ const TYPE_TO_FORMAT = {
 
 const getFileName = (path) => path.split('/').pop()
 
-export default function (fontFile, { fallback, style, weight, name }) {
+module.exports = function (fontFile, { fallback = 'sans-serif', style = 'normal', weight = '400', name } = {}) {
   let font
 
   try {

@@ -55,4 +55,6 @@ function calculateFallbackFontValues (font, category = 'serif') {
   }
 }
 
-export { calculateFallbackFontValues }
+module.exports = {
+  calculateFallbackFontValues
+}
