@@ -24,9 +24,9 @@ export default function (fontFile, { fallback, style, weight, name }) {
 
   const values = calculateFallbackFontValues(font, fallback)
 
-  const fontFilename = name || getFileName(fontFile)
+  const fontFilename = getFileName(fontFile)
   const fontFormat = TYPE_TO_FORMAT[font.type.toLowerCase()]
-  const fontFamily = font.familyName
+  const fontFamily = name || font.familyName
   const fontStyle = style
   const fontWeight = weight
 
