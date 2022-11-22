@@ -1,5 +1,5 @@
 #! /usr/bin/env node
-const fontpie = require('fontpie')
+const fontpie = require('fontpie-calc')
 const { program } = require('commander')
 
 program
