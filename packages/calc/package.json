@@ -1,6 +1,6 @@
 {
   "name": "fontpie-calc",
-  "description": "Tool for fallback @font-face calculation",
+  "description": "Tool for calculate @font-face fallback",
   "version": "0.1.0",
   "source": "./index.js",
   "main": "dist/index.js",
