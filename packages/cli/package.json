@@ -14,7 +14,8 @@
     "lint:fix": "npm run lint -- --fix"
   },
   "dependencies": {
-    "commander": "^9.4.1"
+    "commander": "^9.4.1",
+    "fontpie-calc": "^0.1.0"
   },
   "devDependencies": {
     "eslint": "^8.27.0",
