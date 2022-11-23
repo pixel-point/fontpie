@@ -1,13 +1,56 @@
-const DEFAULT_SERIF_FONT = {
-  name: 'Times New Roman',
-  azAvgWidth: 854.3953488372093,
-  unitsPerEm: 2048
+const DefaultFont = {
+  SERIF: {
+    REGULAR: {
+      name: 'Times New Roman',
+      azAvgWidth: 854.3953488372093,
+      unitsPerEm: 2048
+    },
+    BOLD: {
+      name: 'Times New Roman Bold',
+      azAvgWidth: 868.1627906976744,
+      unitsPerEm: 2048
+    },
+    ITALIC: {
+      name: 'Times New Roman Italic',
+      azAvgWidth: 867.1627906976744,
+      unitsPerEm: 2048
+    },
+    BOLD_ITALIC: {
+      name: 'Times New Roman Bold Italic',
+      azAvgWidth: 868.1627906976744,
+      unitsPerEm: 2048
+    }
+  },
+  SANS_SERIF: {
+    REGULAR: {
+      name: 'Arial',
+      azAvgWidth: 934.5116279069767,
+      unitsPerEm: 2048
+    },
+    BOLD: {
+      name: 'Arial Bold',
+      azAvgWidth: 1011.046511627907,
+      unitsPerEm: 2048
+    },
+    ITALIC: {
+      name: 'Arial Italic',
+      azAvgWidth: 934.5116279069767,
+      unitsPerEm: 2048
+    },
+    BOLD_ITALIC: {
+      name: 'Arial Bold Italic',
+      azAvgWidth: 1011.046511627907,
+      unitsPerEm: 2048
+    }
+  }
 }
 
-const DEFAULT_SANS_SERIF_FONT = {
-  name: 'Arial',
-  azAvgWidth: 934.5116279069767,
-  unitsPerEm: 2048
+const getFallbackFont = (family, weight, style) => {
+  const _family = family === 'serif' ? 'SERIF' : 'SANS_SERIF'
+  const _weight = weight === 'bold' || weight > 500 ? 'BOLD' : 'REGULAR'
+  const _style = style === 'italic' ? '_ITALIC' : ''
+
+  return DefaultFont[_family][_weight + _style]
 }
 
 function calcAverageWidth (font) {
@@ -33,9 +76,8 @@ function formatOverrideValue (val) {
   return Math.abs(val * 100).toFixed(2) + '%'
 }
 
-function calculateFallbackFontValues (font, category = 'serif') {
-  const fallbackFont =
-      category === 'serif' ? DEFAULT_SERIF_FONT : DEFAULT_SANS_SERIF_FONT
+function calculateFallbackFontValues (font, family, style, weight) {
+  const fallbackFont = getFallbackFont(family, weight, style)
 
   const azAvgWidth = calcAverageWidth(font)
   const { ascent, descent, lineGap, unitsPerEm } = font

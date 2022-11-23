@@ -21,7 +21,7 @@ module.exports = function (fontFile, { fallback = 'sans-serif', style = 'normal'
     return null
   }
 
-  const values = calculateFallbackFontValues(font, fallback)
+  const values = calculateFallbackFontValues(font, fallback, style, weight)
 
   const fontFilename = getFileName(fontFile)
   const fontFormat = TYPE_TO_FORMAT[font.type.toLowerCase()]
