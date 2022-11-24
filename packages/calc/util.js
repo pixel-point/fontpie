@@ -7,17 +7,17 @@ const DefaultFont = {
     },
     BOLD: {
       name: 'Times New Roman Bold',
-      azAvgWidth: 868.1627906976744,
+      azAvgWidth: 907.5581395348837,
       unitsPerEm: 2048
     },
     ITALIC: {
       name: 'Times New Roman Italic',
-      azAvgWidth: 867.1627906976744,
+      azAvgWidth: 846.5581395348837,
       unitsPerEm: 2048
     },
     BOLD_ITALIC: {
       name: 'Times New Roman Bold Italic',
-      azAvgWidth: 868.1627906976744,
+      azAvgWidth: 867.8837209302326,
       unitsPerEm: 2048
     }
   },
@@ -98,5 +98,6 @@ function calculateFallbackFontValues (font, family, style, weight) {
 }
 
 module.exports = {
+  calcAverageWidth,
   calculateFallbackFontValues
 }
