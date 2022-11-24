@@ -1,7 +1,5 @@
 # Fontpie - get your layout shifts optimized with a CLI-generated piece of CSS! 
 
-![npm](https://img.shields.io/npm/v/fontpie) ![npm](https://img.shields.io/npm/dm/fontpie)
-
 ## Features
 
 🏃‍♂️ Runs from command line

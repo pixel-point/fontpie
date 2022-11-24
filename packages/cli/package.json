@@ -3,22 +3,20 @@
   "description": "CLI tool for creating fallback @font-face",
   "version": "0.1.6",
   "main": "index.js",
+  "bin": {
+    "fontpie": "index.js"
+  },
   "files": [
-    "index.js",
-    "LICENSE",
-    "README.md"
+    "index.js"
   ],
   "scripts": {
     "lint": "npx eslint *.js",
     "lint:fix": "npm run lint -- --fix",
     "start": "node index.js"
   },
-  "bin": {
-    "fontpie": "index.js"
-  },
   "dependencies": {
     "commander": "^9.4.1",
-    "fontkit": "^2.0.2"
+    "fontpie-calc": "^0.1.0"
   },
   "devDependencies": {
     "eslint": "^8.27.0",
@@ -29,6 +27,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com:pixel-point/fontpie.git"
+    "url": "git+https://github.com:pixel-point/fontpie.git",
+    "directory": "packages/cli"
   }
 }

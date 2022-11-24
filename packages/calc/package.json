@@ -1,0 +1,31 @@
+{
+  "name": "fontpie-calc",
+  "description": "Tool for calculate @font-face fallback",
+  "version": "0.1.0",
+  "source": "./index.js",
+  "main": "dist/index.js",
+  "files": [
+    "dist/index.js"
+  ],
+  "scripts": {
+    "lint": "npx eslint *.js",
+    "lint:fix": "npm run lint -- --fix",
+    "build": "parcel build"
+  },
+  "devDependencies": {
+    "eslint": "^8.28.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.5.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "parcel": "^2.8.0"
+  },
+  "peerDependencies": {
+    "fontkit": "^2.0.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com:pixel-point/fontpie.git",
+    "directory": "packages/cli"
+  }
+}
