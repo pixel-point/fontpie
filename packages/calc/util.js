@@ -10,7 +10,7 @@ const DefaultFont = {
       azAvgWidth: 907.5581395348837,
       unitsPerEm: 2048
     },
-    ITALIC: {
+    REGULAR_ITALIC: {
       name: 'Times New Roman Italic',
       azAvgWidth: 846.5581395348837,
       unitsPerEm: 2048
@@ -32,7 +32,7 @@ const DefaultFont = {
       azAvgWidth: 1011.046511627907,
       unitsPerEm: 2048
     },
-    ITALIC: {
+    REGULAR_ITALIC: {
       name: 'Arial Italic',
       azAvgWidth: 934.5116279069767,
       unitsPerEm: 2048
@@ -54,7 +54,7 @@ const DefaultFont = {
       azAvgWidth: 1229,
       unitsPerEm: 2048
     },
-    ITALIC: {
+    REGULAR_ITALIC: {
       name: 'Courier New Italic',
       azAvgWidth: 1229,
       unitsPerEm: 2048
