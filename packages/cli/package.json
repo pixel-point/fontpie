@@ -1,7 +1,7 @@
 {
   "name": "fontpie",
   "description": "CLI tool for creating fallback @font-face",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "main": "index.js",
   "bin": {
     "fontpie": "index.js"
@@ -17,7 +17,7 @@
   "dependencies": {
     "commander": "^9.4.1",
     "fontkit": "^2.0.2",
-    "fontpie-calc": "^0.1.0"
+    "fontpie-calc": "^0.2.0"
   },
   "devDependencies": {
     "eslint": "^8.27.0",
