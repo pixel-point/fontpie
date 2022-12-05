@@ -72,7 +72,7 @@ Arguments:
   file                          *.ttf, *.otf, *.woff or *.woff2 font file
 
 Options:
-  -f, --fallback <font-family>  fallback font family type: "serif" or "sans-serif" (default: "serif")
+  -f, --fallback <font-family>  fallback font family type: "serif", "sans-serif" or "mono" (default: "san-serif")
   -s, --style <style>           font-style value (default: "normal")
   -w, --weight <weight>         font-weight value (default: "400")
   -n, --name <name>             font name what will be used as font-family value, by default font filename
