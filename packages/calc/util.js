@@ -10,7 +10,7 @@ const DefaultFont = {
       azAvgWidth: 907.5581395348837,
       unitsPerEm: 2048
     },
-    ITALIC: {
+    REGULAR_ITALIC: {
       name: 'Times New Roman Italic',
       azAvgWidth: 846.5581395348837,
       unitsPerEm: 2048
@@ -32,7 +32,7 @@ const DefaultFont = {
       azAvgWidth: 1011.046511627907,
       unitsPerEm: 2048
     },
-    ITALIC: {
+    REGULAR_ITALIC: {
       name: 'Arial Italic',
       azAvgWidth: 934.5116279069767,
       unitsPerEm: 2048
@@ -42,11 +42,33 @@ const DefaultFont = {
       azAvgWidth: 1011.046511627907,
       unitsPerEm: 2048
     }
+  },
+  MONO: {
+    REGULAR: {
+      name: 'Courier New',
+      azAvgWidth: 1229,
+      unitsPerEm: 2048
+    },
+    BOLD: {
+      name: 'Courier New Bold',
+      azAvgWidth: 1229,
+      unitsPerEm: 2048
+    },
+    REGULAR_ITALIC: {
+      name: 'Courier New Italic',
+      azAvgWidth: 1229,
+      unitsPerEm: 2048
+    },
+    BOLD_ITALIC: {
+      name: 'Courier New Bold Italic',
+      azAvgWidth: 1229,
+      unitsPerEm: 2048
+    }
   }
 }
 
 const getFallbackFont = (family, weight, style) => {
-  const _family = family === 'serif' ? 'SERIF' : 'SANS_SERIF'
+  const _family = family === 'serif' ? 'SERIF' : family === 'mono' ? 'MONO' : 'SANS_SERIF'
   const _weight = weight === 'bold' || weight > 500 ? 'BOLD' : 'REGULAR'
   const _style = style === 'italic' ? '_ITALIC' : ''
 
