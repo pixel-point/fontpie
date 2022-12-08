@@ -10,6 +10,8 @@
 
 🚀 Framework, language, and bundler-agnostic solution
 
+👀 Multiple fallback font-weight support
+
 ## The problem
 
 Custom web font usage is one of the most common causes of cumulative layout shifts on a page. It happens because your custom font metrics differ from the fallback font metrics available in the operating system, and it is the fallback font that is used by the browser to calculate block sizes while the custom font is loading. Thus, the same text with the same `font-size` and `line-height` properties may occupy different amounts of space.
@@ -82,6 +84,8 @@ Options:
 **Serif:** Times New Roman
 
 **Sans-Serif:** Arial
+
+**Monospace:** Courier New 
 
 ## Compatibility
 
