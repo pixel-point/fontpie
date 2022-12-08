@@ -1,3 +1,6 @@
+import { Font, Glyph } from 'fontkit';
+import { FallbackFontValueType, GetFallbackFontType } from './types';
+
 const DefaultFont = {
   SERIF: {
     REGULAR: {
@@ -67,19 +70,35 @@ const DefaultFont = {
   }
 }
 
-const getFallbackFont = (family, weight, style) => {
-  const _family = family === 'serif' ? 'SERIF' : family === 'mono' ? 'MONO' : 'SANS_SERIF'
-  const _weight = weight === 'bold' || weight > 500 ? 'BOLD' : 'REGULAR'
-  const _style = style === 'italic' ? '_ITALIC' : ''
+enum Family {
+  SERIF = 'SERIF',
+  SANS_SERIF = 'SANS_SERIF',
+  MONO = 'MONO'
+}
+
+enum Weight {
+  REGULAR = 'REGULAR',
+  BOLD = 'BOLD'
+}
+
+enum Style {
+  REGULAR = '',
+  ITALIC = '_ITALIC'
+}
+  
+const getFallbackFont = (family:string, weight:string | number, style:string):GetFallbackFontType => {
+  const _family = family === 'serif' ? Family.SERIF : family === 'mono' ? Family.MONO : Family.SANS_SERIF
+  const _weight = weight === 'bold' || weight > 500 ? Weight.BOLD : Weight.REGULAR
+  const _style = style === 'italic' ? Style.ITALIC : Style.REGULAR
 
   return DefaultFont[_family][_weight + _style]
 }
 
-function calcAverageWidth (font) {
+function calcAverageWidth (font: Font) {
   const avgCharacters = 'aaabcdeeeefghiijklmnnoopqrrssttuvwxyz      '
   const hasAllChars = font
     .glyphsForString(avgCharacters)
-    .flatMap((glyph) => glyph.codePoints)
+    .flatMap((glyph:Glyph) => glyph.codePoints)
     .every((codePoint) => font.hasGlyphForCodePoint(codePoint))
 
   if (!hasAllChars) {
@@ -89,16 +108,16 @@ function calcAverageWidth (font) {
   const widths = font
     .glyphsForString(avgCharacters)
     .map((glyph) => glyph.advanceWidth)
-  const totalWidth = widths.reduce((sum, width) => sum + width, 0)
+  const totalWidth = widths.reduce((sum:number, width:number) => sum + width, 0)
 
   return totalWidth / widths.length
 }
 
-function formatOverrideValue (val) {
+function formatOverrideValue (val:number) {
   return Math.abs(val * 100).toFixed(2) + '%'
 }
 
-function calculateFallbackFontValues (font, family, style, weight) {
+function calculateFallbackFontValues (font: Font, family: string, style: string, weight: number): FallbackFontValueType {
   const fallbackFont = getFallbackFont(family, weight, style)
 
   const azAvgWidth = calcAverageWidth(font)
