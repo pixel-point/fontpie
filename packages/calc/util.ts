@@ -1,7 +1,9 @@
 import { Font, Glyph } from 'fontkit';
-import { FallbackFontValueType, GetFallbackFontType } from './types';
 
-const DefaultFont = {
+import { FallbackFontValueType, FontData, DefaultFontType } from './types';
+import { FontFamilyEnum, FontWeightEnum, FontStyleEnum } from './enums';
+
+const DefaultFont: DefaultFontType = {
   SERIF: {
     REGULAR: {
       name: 'Times New Roman',
@@ -69,29 +71,13 @@ const DefaultFont = {
     }
   }
 }
-
-enum Family {
-  SERIF = 'SERIF',
-  SANS_SERIF = 'SANS_SERIF',
-  MONO = 'MONO'
-}
-
-enum Weight {
-  REGULAR = 'REGULAR',
-  BOLD = 'BOLD'
-}
-
-enum Style {
-  REGULAR = '',
-  ITALIC = '_ITALIC'
-}
   
-const getFallbackFont = (family:string, weight:string | number, style:string):GetFallbackFontType => {
-  const _family = family === 'serif' ? Family.SERIF : family === 'mono' ? Family.MONO : Family.SANS_SERIF
-  const _weight = weight === 'bold' || weight > 500 ? Weight.BOLD : Weight.REGULAR
-  const _style = style === 'italic' ? Style.ITALIC : Style.REGULAR
+const getFallbackFont = (family:string, weight:string | number, style:string): FontData => {
+  const _family = family === 'serif' ? FontFamilyEnum.SERIF : family === 'mono' ? FontFamilyEnum.MONO : FontFamilyEnum.SANS_SERIF
+  const _weight = weight === 'bold' || weight > 500 ? FontWeightEnum.BOLD : FontWeightEnum.REGULAR
+  const _style = style === 'italic' ? FontStyleEnum.ITALIC : FontStyleEnum.REGULAR
 
-  return DefaultFont[_family][_weight + _style]
+  return DefaultFont[_family][`${_weight}${_style}`]
 }
 
 function calcAverageWidth (font: Font) {
@@ -142,3 +128,6 @@ module.exports = {
   calcAverageWidth,
   calculateFallbackFontValues
 }
+
+// https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/fontkit/index.d.ts
+// https://github.com/foliojs/fontkit#readme
