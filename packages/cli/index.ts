@@ -2,6 +2,8 @@
 const fontpie = require('fontpie-calc')
 const { program } = require('commander')
 
+import { OptionTypes } from './types'
+
 program
   .name('fontpie')
   .description(
@@ -19,7 +21,7 @@ program
     '-n, --name <name>',
     'font name that will be used as `font-family` property (default: font_filename)'
   )
-  .action((file, option) => {
+  .action((file: File, option: OptionTypes) => {
     const {
       ascentOverride,
       descentOverride,

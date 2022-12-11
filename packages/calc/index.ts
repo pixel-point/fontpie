@@ -1,7 +1,9 @@
 const fontkit = require('fontkit')
 const { calculateFallbackFontValues } = require('./util')
 
-const TYPE_TO_FORMAT = {
+import { FallbackFontValueType, FontDataAll, TypeToFormatType } from './types'
+
+const TYPE_TO_FORMAT:TypeToFormatType = {
   ttf: 'truetype',
   otf: 'opentype',
   woff: 'woff',
@@ -9,22 +11,22 @@ const TYPE_TO_FORMAT = {
   eot: 'embedded-opentype'
 }
 
-const getFileName = (path) => path.split('/').pop()
+const getFileName = (path:string):string | undefined => path.split('/').pop()
 
-module.exports = function (fontFile, { fallback = 'sans-serif', style = 'normal', weight = '400', name } = {}) {
+module.exports = function (fontFile:string, { fallback = 'sans-serif', style = 'normal', weight = '400', name = '' } = {}):FontDataAll | null {
   let font
 
   try {
     font = fontkit.openSync(fontFile)
-  } catch (err) {
+  } catch (err:any) {
     console.error(err.message)
     return null
   }
 
-  const values = calculateFallbackFontValues(font, fallback, style, weight)
+  const values: FallbackFontValueType = calculateFallbackFontValues(font, fallback, style, weight)
 
   const fontFilename = getFileName(fontFile)
-  const fontFormat = TYPE_TO_FORMAT[font.type.toLowerCase()]
+  const fontFormat = TYPE_TO_FORMAT[font.type.toLowerCase() as keyof TypeToFormatType]
   const fontFamily = name || font.familyName
   const fontStyle = style
   const fontWeight = weight
