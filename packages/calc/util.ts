@@ -128,6 +128,3 @@ module.exports = {
   calcAverageWidth,
   calculateFallbackFontValues
 }
-
-// https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/fontkit/index.d.ts
-// https://github.com/foliojs/fontkit#readme
